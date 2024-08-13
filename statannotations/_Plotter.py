@@ -43,7 +43,7 @@ class _Plotter:
 
         This function should be called whenever axes limits are altered.
         """
-
+        self.ax.get_xlim()  # this makes sure the axis transforms used below are updated. Otherwise it may happen that stale transforms are used which leads to mismatch of data points 
         check_is_in(kind, ['data_to_ax', 'ax_to_data', 'pix_to_ax', 'all'],
                     'kind')
 
